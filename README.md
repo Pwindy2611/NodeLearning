@@ -44,3 +44,29 @@
     "express": "^4.19.2"
   }
 )
+
+## Install Nodemon
+* npm  i nodemon --save-dev
+->("devDependencies": {
+    "nodemon": "^3.1.0"
+  })
+- "start": "nodemon --inspect ./App.js"---use nodemon to start server and debug
+
+## Install Morgan (middleware-- HTTP request logger middleware for node.js)
+* npm i morgan --save-dev
+
+## Template Engine(handlebars)-- Express handlebars (Directory Structure for render html)
+* npm i express-handlebars
+- This Directory Structure:
+src
+├── resources
+    ├── views
+     ├── layouts
+        └── main.hbs
+     └── partials
+        ├── footer
+        └── header
+    └── home.hbs
+└── app.js
+
+## Nodemon.json- extension watch nodemon
