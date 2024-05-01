@@ -4,6 +4,7 @@ const handlebars = require('express-handlebars') //Import handelBars
 const app = express() //object builder for express
 const port = 3000 //Run in port 3000
 const path = require('path')
+const route=require('./routes')
 
 //HTTP logger
 app.use(morgan('combined'))
@@ -12,10 +13,9 @@ app.engine('hbs', handlebars.engine({extname: '.hbs'}))
 app.set('view engine', 'hbs')
 //__dirname : C:\Users\Admin\NodeLearning\src
 app.set('views',path.join(__dirname, 'resources/views'))
+
 //Route default "/"
-app.get('/', (req, res) => {
-  res.render('home') //use HTTP Get
-})
+route(app)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
